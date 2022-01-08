@@ -8,7 +8,7 @@ import org.junit.Test
 class LifecycleHelperTest {
 
     @Test
-    fun `check lifecycle events from INITIALIZED to DESTRYED`() {
+    fun `getEventsBetween should return events for transition from INITIALIZED to DESTRYED`() {
         val transitions = listOf(
             State.INITIALIZED to State.DESTROYED
         )
@@ -23,11 +23,11 @@ class LifecycleHelperTest {
             )
         )
 
-        assertLifecyclePath(transitions, expectedEvents)
+        verifyGetEventsBetween(transitions, expectedEvents)
     }
 
     @Test
-    fun `check lifecycle events from `() {
+    fun `getEventsBetween should return events for single state transitions`() {
         val transitions = listOf(
             State.INITIALIZED to State.CREATED,
             State.CREATED to State.STARTED,
@@ -46,22 +46,18 @@ class LifecycleHelperTest {
             listOf(Event.ON_DESTROY),
         )
 
-        assertLifecyclePath(transitions, expectedEvents)
+        verifyGetEventsBetween(transitions, expectedEvents)
     }
 
-    private fun assertLifecyclePath(
+    private fun verifyGetEventsBetween(
         transitions: List<Pair<State, State>>,
         expectedEvents: List<List<Event>>
     ) {
-        var idx = 0
-        while (idx < transitions.size) {
-            val transition = transitions[idx]
+        for ((idx, transition) in transitions.withIndex()) {
             val expectedResult = expectedEvents[idx]
 
             assertThat(getEventsBetween(transition.first, transition.second))
                 .isEqualTo(expectedResult)
-
-            idx++
         }
     }
 }
