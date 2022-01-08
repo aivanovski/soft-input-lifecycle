@@ -1,7 +1,7 @@
 ext {
     android = [
             minSdk    : 21,
-            targetSdk : 29,
+            targetSdk : 31,
             compileSdk: 31
     ]
     version = [
@@ -12,7 +12,7 @@ ext {
     multidexVersion = '2.0.1'
     recyclerViewVersion = '1.2.1'
     constraintLayoutVersion = '2.1.2'
-    kotlinVersion = '1.5.21'
+    kotlinVersion = '1.5.32'
     coroutinesVersion = '1.5.0'
     coreKtxVersion = '1.6.0'
     activityKtxVersion = '1.4.0'
