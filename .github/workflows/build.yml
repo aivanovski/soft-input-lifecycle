@@ -1,4 +1,4 @@
-name: Run tests build Demo app
+name: Run tests and build Demo app
 
 on:
   push:
