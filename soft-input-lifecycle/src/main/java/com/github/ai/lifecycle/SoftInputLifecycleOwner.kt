@@ -12,8 +12,7 @@ import com.github.ai.lifecycle.utils.getEventsBetween
 
 class SoftInputLifecycleOwner(
     parentLifecycleOwner: LifecycleOwner,
-    private val windowFocus: LiveData<Boolean>,
-    private val isDebug: Boolean = DEBUG
+    private val windowFocus: LiveData<Boolean>
 ) : LifecycleOwner, LifecycleEventObserver {
 
     private var isParentAlreadyCreated = false
@@ -48,7 +47,7 @@ class SoftInputLifecycleOwner(
     private fun onDataChanged(hasFocus: Boolean, parentLifecycleState: State) {
         val newState = determineLifecycleState(hasFocus, parentLifecycleState)
 
-        if (isDebug) {
+        if (DEBUG) {
             Log.d(
                 TAG,
                 String.format(
