@@ -1,0 +1,27 @@
+name: Run tests build Demo app
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Run tests
+        run: ./gradlew soft-input-lifecycle:test
+
+      - name: Build Demo app
+        run: ./gradlew demo:assembleDebug
+
+      - name: Store APK file
+        uses: actions/upload-artifact@v2
+        with:
+          name: Demo
+          path: ./demo/build/outputs/apk/debug/demo-debug.apk
