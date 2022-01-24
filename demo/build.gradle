@@ -62,4 +62,12 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
     implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
+
+    // Instrumental tests dependencies
+    androidTestImplementation "com.android.support.test:runner:$androidXTestVersion"
+    androidTestImplementation "androidx.test.ext:junit:$androidXJUnitVersion"
+    androidTestImplementation "androidx.test:rules:$appCompatVersion"
+    androidTestImplementation "com.google.truth:truth:$truthVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espressoCoreVersion"
+    androidTestImplementation "androidx.appcompat:appcompat:$appCompatVersion"
 }

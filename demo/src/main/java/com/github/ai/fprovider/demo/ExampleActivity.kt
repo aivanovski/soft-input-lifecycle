@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.github.ai.fprovider.demo.examples.InstrumentationTestFragment
 import com.github.ai.fprovider.demo.examples.NoSoftInputLifecycleExampleFragment
 import com.github.ai.fprovider.demo.examples.SimpleExampleFragment
 
@@ -26,6 +27,7 @@ class ExampleActivity : AppCompatActivity() {
         return when (example) {
             Example.SIMPLE_WITH_LIFECYCLE -> SimpleExampleFragment()
             Example.SIMPLE_WITHOUT_LIFECYCLE -> NoSoftInputLifecycleExampleFragment()
+            Example.INSTRUMENTATION_TEST -> InstrumentationTestFragment()
         }
     }
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.github.ai.fprovider.demo">
+    package="com.github.ai.fprovider.demo"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
         android:allowBackup="false"
@@ -20,7 +20,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ExampleActivity"/>
+        <activity
+            android:name=".ExampleActivity"
+            android:windowSoftInputMode="adjustResize" />
 
     </application>
 

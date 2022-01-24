@@ -1,7 +1,7 @@
 ext {
     android = [
             minSdk    : 21,
-            targetSdk : 31,
+            targetSdk : 30,
             compileSdk: 31
     ]
     version = [
@@ -28,4 +28,7 @@ ext {
     mockkVersion = '1.11.0'
     truthVersion = '1.0'
     androidXArchVersion = '2.1.0'
+    androidXTestVersion = '1.1.0'
+    espressoCoreVersion = '3.4.0'
+    androidXJUnitVersion = '1.1.3'
 }
