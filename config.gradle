@@ -5,8 +5,8 @@ ext {
             compileSdk: 31
     ]
     version = [
-            versionCode : 2,
-            versionName : "0.2.0"
+            versionCode : 3,
+            versionName : "0.2.1"
     ]
 
     multidexVersion = '2.0.1'
